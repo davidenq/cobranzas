@@ -1,0 +1,11 @@
+name: __NAME__
+
+channels:
+  - default
+  - conda-forge
+
+dependencies:
+  - pyspark
+  - python=3.9
+  - pip
+  - pytest
