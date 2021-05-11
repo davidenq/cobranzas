@@ -16,4 +16,4 @@ def test_dataframe_to_collection():
   expect = dataframe_to_collection(df)
   assert actual == expect  
 
-test_dataframe_to_collection()
+# test_dataframe_to_collection()
