@@ -30,3 +30,4 @@ ut:
 	@ conda activate $(PROJECT_ENVIRONMENT) --no-stack
 	@ conda env list
 	@ python -m pytest src/notebooks/Shared/Tests/*.py
+	@ git chekcout -- .

@@ -8,7 +8,6 @@ while IFS=  read -r -d $'\0'; do
     arr[${#arr[@]}]=$MAGICRUN
     sed -i "1s/^/${MAGICRUN}\n/" $PATH_FILE
 done < <(find . -name "Test_*.py" -print0)
-git chekcout -- .
 
 #for value in "${arr[@]}"
 #do
