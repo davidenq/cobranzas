@@ -22,4 +22,11 @@ update-file-dependencies:
 unit-test:
 	@ source $$CONDA_PREFIX/etc/profile.d/conda.sh
 	@ conda activate $(PROJECT_ENVIRONMENT) --no-stack
-	@ pytest notebooks/Shared/Utils/*.py
+	@ pytest src/notebooks/Shared/Utils/*.py
+
+ut:
+	@ ./scripts/tests/coder-refactor.sh
+	@ source $$CONDA_PREFIX/etc/profile.d/conda.sh
+	@ conda activate $(PROJECT_ENVIRONMENT) --no-stack
+	@ conda env list
+	@ python -m pytest src/notebooks/Shared/Tests/*.py
