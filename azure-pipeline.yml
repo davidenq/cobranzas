@@ -1,4 +1,6 @@
 name: CICD
+pool:
+  vmImage: ubuntu-latest
 trigger:
   - main
 variables:
@@ -18,10 +20,13 @@ steps:
       versionSpec: 3.9
   # install basic dependencies with pip
   - script: make install-dependencies
+    displayName: 'Install databricks-cli'
   # connect with databricks using a token and host
   - script: make connect-with-databricks
+    displayName: 'Connect with azure databricks service'
   # copy dependencies from cluster to conda.yml file
   - script: make update-file-dependencies
+    displayName: 'Copy dependencies from the cluster databricks to conda.yml'
 
 # stages:
 #   - stage: UpdateCondaDependencies
