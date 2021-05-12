@@ -10,22 +10,35 @@ variables:
     value: $(DATABRICKS_HOST)
   - name: DATABRICKS_TOKEN
     value: $DATABRICKS_TOKEN)
-stages:
-  - stage: UpdateCondaDependencies
-    jobs:
-      - job: InstallDependencies
-        strategy:
-          parallel: 0
-        steps:
-          - task: usePythonVersion@0 
-            displayName: 'Use Python 3.9'
-            inputs:
-              versionSpec: 3.9
-          - script: make install-dependencies
-      - job: ConnectToDatabricks
-        strategy:
-          parallel: 0
-        dependsOn: InstallDependencies
-        steps:
-          - script: make connect-with-databricks
-          - script: make update-file-dependencies
+steps:
+  # using python dependency
+  - task: UsePythonVersion@0
+    displayName: 'Use Python 3.9'
+    inputs:
+      versionSpec: 3.9
+  # install basic dependencies with pip
+  - script: make install-dependencies
+  # connect with databricks using a token and host
+  - script: make connect-with-databricks
+  # copy dependencies from cluster to conda.yml file
+  - script: make update-file-dependencies
+
+# stages:
+#   - stage: UpdateCondaDependencies
+#     jobs:
+#       - job: InstallDependencies
+#         strategy:
+#           parallel: 0
+#         steps:
+#           - task: usePythonVersion@0 
+#             displayName: 'Use Python 3.9'
+#             inputs:
+#               versionSpec: 3.9
+#           - script: make install-dependencies
+#       - job: ConnectToDatabricks
+#         strategy:
+#           parallel: 0
+#         dependsOn: InstallDependencies
+#         steps:
+#           - script: make connect-with-databricks
+#           - script: make update-file-dependencies
