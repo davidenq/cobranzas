@@ -10,13 +10,11 @@ variables:
     value: $(DATABRICKS_HOST)
   - name: DATABRICKS_TOKEN
     value: $DATABRICKS_TOKEN)
-stages:
-  - stage: UpdateCondaDependencies
-    steps:
-      - task: usePythonVersion@0 
-        displayName: 'Use Python 3.9'
-        inputs:
-          versionSpec: 3.9
-      - script: make install-dependencies
-      - script: make connect-with-databricks
-      - script: make update-file-dependencies
+steps:
+  - task: usePythonVersion@0 
+    displayName: 'Use Python 3.9'
+    inputs:
+      versionSpec: 3.9
+  - script: make install-dependencies
+  - script: make connect-with-databricks
+  - script: make update-file-dependencies
