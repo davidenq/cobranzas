@@ -20,14 +20,4 @@ update-file-dependencies:
 
 ### commands for Testing
 unit-test:
-	@ source $$CONDA_PREFIX/etc/profile.d/conda.sh
-	@ conda activate $(PROJECT_ENVIRONMENT) --no-stack
-	@ pytest src/notebooks/Shared/Utils/*.py
-
-ut:
-	@ ./scripts/tests/coder-refactor.sh
-	@ source $$CONDA_PREFIX/etc/profile.d/conda.sh
-	@ conda activate $(PROJECT_ENVIRONMENT) --no-stack
-	@ conda env list
-	@ python -m pytest src/notebooks/Shared/Tests/*.py
-	@ git chekcout -- .
+	@ ./scripts/tests/unit-tests.sh
