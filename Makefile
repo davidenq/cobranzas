@@ -3,6 +3,11 @@
 SHELL=/bin/bash
 
 include .env
+
+### commands for installing dependencies in order to prepare the environment
+install-dependencies:
+	@ pip install databricks-cli
+
 ### commands for Conda
 create-env:
 	@ conda env remove --name $(PROJECT_ENVIRONMENT)

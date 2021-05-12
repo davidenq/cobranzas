@@ -1,0 +1,26 @@
+name: CICD
+trigger:
+  - main
+variables:
+  - name: PROJECT_ENVIRONMENT
+    value: $(PROJECT_ENVIRONMENT)
+  - name: CLUSTER_NAME
+    value: $(CLUSTER_NAME)
+  - name: DATABRICKS_HOST
+    value: $(DATABRICKS_HOST)
+  - name: DATABRICKS_TOKEN
+    value: $DATABRICKS_TOKEN)
+stages:
+  - stage: UpdateCondaDependencies
+    jobs:
+      - job: InstallDependencies
+        steps:
+          - task: usePythonVersion@0
+            displayName: 'Use Python 3.9'
+            inputs:
+              versionSpec: 3.9
+          - script: make install-dependencies
+      - job: Connect2Databricks
+        steps:
+          - script: make connect-with-databricks
+          - script: make update-file-dependencies
