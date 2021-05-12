@@ -25,7 +25,7 @@ stages:
       - job: ConnectToDatabricks
         strategy:
           parallel: 0
-        dependOn: InstallDependencies
+        dependsOn: InstallDependencies
         steps:
           - script: make connect-with-databricks
           - script: make update-file-dependencies
