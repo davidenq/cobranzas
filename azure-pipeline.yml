@@ -21,6 +21,7 @@ stages:
               versionSpec: 3.9
           - script: make install-dependencies
       - job: Connect2Databricks
+        dependsOn: InstallDependencies
         steps:
           - script: make connect-with-databricks
           - script: make update-file-dependencies
