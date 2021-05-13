@@ -21,7 +21,7 @@ jobs:
         run: make install-dependencies
       - name: Set Databricks credentials
         run: |
-        sh ./scripts/databricks/create-cfg.sh
+          sh ./scripts/databricks/create-cfg.sh
       - name: Configure databricks
         run: databricks configure
       # - name: Connec with azure databricks service
