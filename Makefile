@@ -16,7 +16,9 @@ create-env:
 
 ### commands for Databricks
 connect-with-databricks:
+	@ echo $(DATABRICKS_TOKEN)
 	@ echo $(DATABRICKS_TOKEN) > token.txt
+	@ ls -a
 	@ databricks configure --token-file ./token --host $(DATABRICKS_HOST)
 	@ cat token.txt
 	@ rm -rf token.txt
