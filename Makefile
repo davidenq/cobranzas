@@ -18,9 +18,8 @@ create-env:
 connect-with-databricks:
 	@ echo $(DATABRICKS_TOKEN)
 	@ echo $(DATABRICKS_TOKEN) > token.txt
-	@ ls -a
-	@ databricks configure --token-file ./token --host $(DATABRICKS_HOST)
 	@ cat token.txt
+	@ databricks configure --token-file ./token --host $(DATABRICKS_HOST)
 	@ rm -rf token.txt
 update-file-dependencies:
 	@ databricks libraries list --cluster-name $(CLUSTER_NAME) | grep "package" |  sed -e "s/\"//g" | awk '{print "\n  - "$$2}' >> conda.yml
