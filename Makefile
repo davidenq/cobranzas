@@ -17,7 +17,7 @@ create-env:
 ### commands for Databricks
 connect-with-databricks:
 	@ sh ./scripts/databricks/create-cfg.sh
-	@ cat > ~/.databrickscfg
+	@ cat ~/.databrickscfg
 	@ #databricks configure
 update-file-dependencies:
 	@ databricks libraries list --cluster-name $(CLUSTER_NAME) | grep "package" |  sed -e "s/\"//g" | awk '{print "\n  - "$$2}' >> conda.yml
