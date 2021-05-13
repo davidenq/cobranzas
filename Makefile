@@ -2,7 +2,7 @@
 .ONESHELL:
 SHELL=/bin/bash
 
--include .env
+#-include .env
 
 ### commands for installing dependencies in order to prepare the environment
 install-dependencies:
@@ -16,11 +16,8 @@ create-env:
 
 ### commands for Databricks
 connect-with-databricks:
-	@ echo $(DATABRICKS_TOKEN)
-	@ echo $(DATABRICKS_TOKEN) > token.txt
-	@ cat token.txt
-	@ databricks configure --token-file ./token --host $(DATABRICKS_HOST)
-	@ rm -rf token.txt
+	@ sh ./scripts/databricks/create-cfg.sh
+	@ databricks configure
 update-file-dependencies:
 	@ databricks libraries list --cluster-name $(CLUSTER_NAME) | grep "package" |  sed -e "s/\"//g" | awk '{print "\n  - "$$2}' >> conda.yml
 	@ echo "$$(awk '!a[$$0]++' conda.yml)" > conda.yml
