@@ -1,5 +1,7 @@
 name: CICD
-on: [main]
+on:
+  push:
+    branches: [ main ]
 jobs:
   prepare:
     run-ons: ubuntu-latest
