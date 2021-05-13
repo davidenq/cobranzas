@@ -21,6 +21,6 @@ jobs:
         run: make install-dependencies
       - name: Connec with azure databricks service
         run: make connect-with-databricks
-      - name: Copy dependencies from the databricks cluster to conda.yml
-        run: make update-file-dependencies
+      # - name: Copy dependencies from the databricks cluster to conda.yml
+      #   run: make update-file-dependencies
 
