@@ -19,8 +19,12 @@ jobs:
           python-version: '3.9'
       - name: Install Databricks-CLI
         run: make install-dependencies
-      - name: Connec with azure databricks service
-        run: make connect-with-databricks
+      - name: Set Databricks credentials
+        run: |
+        sh ./scripts/databricks/create-cfg.sh
+        databricks configure
+      # - name: Connec with azure databricks service
+      #   run: make connect-with-databricks
       # - name: Copy dependencies from the databricks cluster to conda.yml
       #   run: make update-file-dependencies
 
