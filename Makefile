@@ -6,7 +6,7 @@ SHELL=/bin/bash
 
 ### commands for installing dependencies in order to prepare the environment
 install-dependencies:
-	@ #pip install databricks-cli
+	@ pip install databricks-cli
 
 ### commands for Conda
 create-env:
@@ -17,8 +17,9 @@ create-env:
 ### commands for Databricks
 connect-with-databricks:
 	@ echo $(DATABRICKS_TOKEN) > token.txt
-	@ echo databricks configure --token-file ./token --host $(DATABRICKS_HOST)
-	@ # rm -rf token.txt
+	@ databricks configure --token-file ./token --host $(DATABRICKS_HOST)
+	@ cat token.txt
+	@ rm -rf token.txt
 update-file-dependencies:
 	@ databricks libraries list --cluster-name $(CLUSTER_NAME) | grep "package" |  sed -e "s/\"//g" | awk '{print "\n  - "$$2}' >> conda.yml
 	@ echo "$$(awk '!a[$$0]++' conda.yml)" > conda.yml
