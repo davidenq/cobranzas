@@ -8,8 +8,6 @@ jobs:
     env:
       PROJECT_ENVIRONMENT: ${{ secrets.PROJECT_ENVIRONMENT }}
       CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}
-      DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
-      DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -20,6 +18,9 @@ jobs:
       - name: Install Databricks-CLI
         run: make install-dependencies
       - name: Set Databricks credentials
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
         run: |
           sh ./scripts/databricks/create-cfg.sh
       - name: Configure databricks
