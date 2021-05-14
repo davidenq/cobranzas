@@ -21,10 +21,10 @@ jobs:
         run: make install-dependencies
       - name: Connec with azure databricks service
         run: make connect-with-databricks
-      - name: print dependencies
-        run: cat ./conda.yml
       - name: Update dependencies
         run: make update-file-dependencies
-      - name: print dependencies
-        run: cat ./conda.yml
+      - name: Create virtual environment
+        run: make create-env
+      - name: unit testing
+        run: make unit-test
 
