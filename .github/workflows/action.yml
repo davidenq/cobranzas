@@ -22,9 +22,9 @@ jobs:
       - name: Connec with azure databricks service
         run: make connect-with-databricks
       - name: print dependencies
-        run: echo conda.yml
+        run: cat ./conda.yml
       - name: Update dependencies
         run: make update-file-dependencies
       - name: print dependencies
-        run: echo conda.yml
+        run: cat ./conda.yml
 
