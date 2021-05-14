@@ -8,8 +8,8 @@ jobs:
     env:
       PROJECT_ENVIRONMENT: ${{ secrets.PROJECT_ENVIRONMENT }}
       CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}
-      DATABRICKS_HOST: https://adb-4536027512959997.17.azuredatabricks.net
-      DATABRICKS_TOKEN: dapif0d29da903ef60c132cfbcb1f7c077ad-2
+      DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+      DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2

@@ -10,14 +10,11 @@ install-dependencies:
 
 ### commands for Databricks
 connect-with-databricks:
-	@ #sh ./scripts/databricks/create-cfg.sh
-	@ #cat ~/.databrickscfg
-	@ echo $$DATABRICKS_TOKEN > ./token
-	@ databricks configure --token-file ./token --host $$DATABRICKS_HOST
+	@ echo $(DATABRICKS_TOKEN) > ./token
+	@ databricks configure --token-file ./token --host $(DATABRICKS_HOST)
 	@ cat ./token
 	@ rm -rf ./token
 update-file-dependencies:
-	@ echo $$CLUSTER_NAME $(CLUSTER_NAME)
 	@ databricks libraries list --cluster-name $(CLUSTER_NAME) | grep "package" |  sed -e "s/\"//g" | awk '{print "\n  - "$$2}' >> conda.yml
 	@ echo "$$(awk '!a[$$0]++' conda.yml)" > conda.yml
 
