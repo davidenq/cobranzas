@@ -27,6 +27,7 @@ jobs:
           host = ${DATABRICKS_HOST}
           token = ${DATABRICKS_TOKEN} 
           EOF
+      - name: Cat databricks configuration
         run: cat ~/.databrickscfg
       - name: Configure databricks
         run: databricks configure
