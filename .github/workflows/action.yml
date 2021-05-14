@@ -24,8 +24,8 @@ jobs:
         run: |
           cat > ~/.databrickscfg  <<EOF
           [DEFAULT] 
-          host = https://adb-4536027512959997.17.azuredatabricks.net
-          token = dapif0d29da903ef60c132cfbcb1f7c077ad-2 
+          host = ${{ env.DATABRICKS_HOST }}
+          token = ${{ env.DATABRICKS_TOKEN }} 
           EOF
       - name: Cat databricks configuration
         run: cat ~/.databrickscfg
