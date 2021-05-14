@@ -27,4 +27,4 @@ create-env:
 
 ### commands for Testing
 unit-test:
-	@ ./scripts/tests/unit-tests.sh
+	@ PROJECT_ENVIRONMENT=$(PROJECT_ENVIRONMENT) ./scripts/tests/unit-tests.sh

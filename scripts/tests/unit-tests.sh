@@ -1,10 +1,10 @@
 #!/bin/bash
 
 
-if [ -f .env ]
-then
-  export $(cat .env | sed 's/#.*//g' | xargs)
-fi
+# if [ -f .env ]
+# then
+#   export $(cat .env | sed 's/#.*//g' | xargs)
+# fi
 
 
 # add imports
@@ -17,7 +17,7 @@ while IFS=  read -r -d $'\0'; do
 done < <(find . -name "Test_*.py" -print0)
 
 # activate environment with conda
-source $CONDA_PREFIX/etc/profile.d/conda.sh
+source $(echo $(conda info --base))/etc/profile.d/conda.sh
 conda activate $PROJECT_ENVIRONMENT --no-stack
 
 # running unit tests
