@@ -17,6 +17,7 @@ connect-with-databricks:
 	@ cat ./token
 	@ rm -rf ./token
 update-file-dependencies:
+	@ echo $$CLUSTER_NAME $(CLUSTER_NAME)
 	@ databricks libraries list --cluster-name $(CLUSTER_NAME) | grep "package" |  sed -e "s/\"//g" | awk '{print "\n  - "$$2}' >> conda.yml
 	@ echo "$$(awk '!a[$$0]++' conda.yml)" > conda.yml
 

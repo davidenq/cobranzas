@@ -24,7 +24,7 @@ jobs:
       - name: print dependencies
         run: echo conda.yml
       - name: Update dependencies
-        run: update-file-dependencies
+        run: make update-file-dependencies
       - name: print dependencies
         run: echo conda.yml
 
