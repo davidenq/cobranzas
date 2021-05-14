@@ -24,8 +24,8 @@ jobs:
         run: |
           cat > ~/.databrickscfg  <<EOF
           [DEFAULT] 
-          host = ${{ env.DATABRICKS_HOST }}
-          token = ${{ env.DATABRICKS_TOKEN }} 
+          host = "$DATABRICKS_HOST"
+          token = "$env.DATABRICKS_TOKEN" 
           EOF
       - name: Print environment variables
         run: printenv
