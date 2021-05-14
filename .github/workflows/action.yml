@@ -20,7 +20,6 @@ jobs:
       - name: Install Databricks-CLI
         run: make install-dependencies
       - name: Set Databricks credentials
-        env:
         run: |
           cat > ~/.databrickscfg  <<EOF
           [DEFAULT] 
@@ -29,6 +28,8 @@ jobs:
           EOF
       - name: Print environment variables
         run: printenv
+      - name: echo envs
+        run: echo $DATABRICKS_HOST ---- ${{env.DATABRICKS_HOST}}
       - name: Cat databricks configuration
         run: cat ~/.databrickscfg
       - name: Configure databricks
