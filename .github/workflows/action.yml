@@ -19,17 +19,8 @@ jobs:
           python-version: '3.9'
       - name: Install Databricks-CLI
         run: make install-dependencies
-      - name: Set Databricks credentials
-        run: |
-          cat > ~/.databrickscfg  <<EOF
-          [DEFAULT] 
-          host = "$DATABRICKS_HOST"
-          token = "$DATABRICKS_TOKEN" 
-          EOF
-      - name: Print environment variables
-        run: printenv
-      - name: echo envs
-        run: echo $DATABRICKS_HOST ---- ${{env.DATABRICKS_HOST}}
+      - name: Connec with azure databricks service
+        run: make connect-with-databricks
       - name: Cat databricks configuration
         run: cat ~/.databrickscfg
       - name: Configure databricks
