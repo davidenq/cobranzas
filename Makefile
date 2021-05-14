@@ -8,12 +8,6 @@ SHELL=/bin/bash
 install-dependencies:
 	@ pip install databricks-cli
 
-### commands for Conda
-create-env:
-	@ conda env remove --name $(PROJECT_ENVIRONMENT)
-	@ awk -v envhash=$(PROJECT_ENVIRONMENT) '{gsub(/__NAME__/, envhash);print}' conda.yml > _temp.yml
-	@ conda env create -f ./_temp.yml ; rm -rf _temp.yml
-
 ### commands for Databricks
 connect-with-databricks:
 	@ #sh ./scripts/databricks/create-cfg.sh
@@ -25,6 +19,13 @@ connect-with-databricks:
 update-file-dependencies:
 	@ databricks libraries list --cluster-name $(CLUSTER_NAME) | grep "package" |  sed -e "s/\"//g" | awk '{print "\n  - "$$2}' >> conda.yml
 	@ echo "$$(awk '!a[$$0]++' conda.yml)" > conda.yml
+
+
+### commands for Conda
+create-env:
+	@ conda env remove --name $(PROJECT_ENVIRONMENT)
+	@ awk -v envhash=$(PROJECT_ENVIRONMENT) '{gsub(/__NAME__/, envhash);print}' conda.yml > _temp.yml
+	@ conda env create -f ./_temp.yml ; rm -rf _temp.yml
 
 ### commands for Testing
 unit-test:

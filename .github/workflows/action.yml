@@ -21,8 +21,10 @@ jobs:
         run: make install-dependencies
       - name: Connec with azure databricks service
         run: make connect-with-databricks
-      - name: Cat databricks configuration
-        run: cat ~/.databrickscfg
-      - name: Configure databricks
-        run: databricks configure
+      - name: print dependencies
+        run: echo conda.yml
+      - name: Update dependencies
+        run: update-file-dependencies
+      - name: print dependencies
+        run: echo conda.yml
 

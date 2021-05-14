@@ -7,5 +7,3 @@ dependencies:
   - python=3.9
   - pip
   - pyspark
-  - pytest
-  - coverage==5.5
