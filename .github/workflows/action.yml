@@ -24,8 +24,8 @@ jobs:
         run: |
           cat > ~/.databrickscfg  <<EOF
           [DEFAULT] 
-          host = ${DATABRICKS_HOST}
-          token = ${DATABRICKS_TOKEN} 
+          host = ${{ secrets.DATABRICKS_HOST }}
+          token = ${{ secrets.DATABRICKS_TOKEN }} 
           EOF
       - name: Cat databricks configuration
         run: cat ~/.databrickscfg
