@@ -22,7 +22,12 @@ jobs:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
         run: |
-          sh ./scripts/databricks/create-cfg.sh
+          cat > ~/.databrickscfg  <<EOF
+          [DEFAULT] 
+          host = ${DATABRICKS_HOST}
+          token = ${DATABRICKS_TOKEN} 
+          EOF
+        run: cat ~/.databrickscfg
       - name: Configure databricks
         run: databricks configure
       # - name: Connec with azure databricks service
