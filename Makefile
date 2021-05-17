@@ -2,7 +2,7 @@
 .ONESHELL:
 SHELL=/bin/bash
 
-#-include .env
+-include .env
 
 ### commands for installing dependencies in order to prepare the environment
 install-dependencies:
