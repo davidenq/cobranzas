@@ -15,10 +15,3 @@ def test_dataframe_to_collection():
   df = sc.parallelize(actual).toDF(("a", "b", "c"))
   expect = dataframe_to_collection(df)
   assert actual == expect
-  
-def test_hola_mundo():
-  expect = "hola mundo"
-  actual = hola_mundo()
-  assert actual == expect 
-
-# test_dataframe_to_collection()
