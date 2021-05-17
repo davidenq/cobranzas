@@ -21,7 +21,7 @@ source $(echo $(conda info --base))/etc/profile.d/conda.sh
 conda activate $PROJECT_ENVIRONMENT --no-stack
 
 # running unit tests
-python -m pytest src/notebooks/Shared/Tests/*.py
+python -m pytest src/notebooks/Tests/*.py
 
 # remove imports
 # for value in "${arr[@]}"
