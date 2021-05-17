@@ -3,9 +3,6 @@ def dataframe_to_collection(df):
   data = [list(map(int, dfc)) for dfc in df.collect()]
   return data
 
-def hola_mundo():
-  return "hola mundo"
-
 # COMMAND ----------
 
 from pyspark.context import SparkContext
