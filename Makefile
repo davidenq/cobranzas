@@ -28,3 +28,6 @@ create-env:
 ### commands for Testing
 unit-test:
 	@ PROJECT_ENVIRONMENT=$(PROJECT_ENVIRONMENT) ./scripts/tests/unit-tests.sh
+
+copy-data-training:
+	dbfs cp -r ./data dbfs:/data
