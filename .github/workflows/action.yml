@@ -2,6 +2,8 @@ name: CICD
 on:
   push:
     branches: [ main ]
+  paths:
+    - src/**
 jobs:
   prepare:
     runs-on: ubuntu-latest
