@@ -48,10 +48,15 @@ run-on-kubernetes:
 replace:
 	@ ./scripts/replace/databricks_to_python.sh
 
+#replace burned paths (rbp) in main.py
+
+replace-bp:
+	@ ./scripts/replace/burned_paths_to_envs.sh
+
 run:
 	@ $(eval ROOT_COBRANZAS_PATH=$(shell pwd)/data/training)
 	@ python src/main.py \
-	${ROOT_COBRANZAS_PATH}/input-v2.csv \
-	${ROOT_COBRANZAS_PATH}/output-v2.csv \
-	${ROOT_COBRANZAS_PATH}/input-v3.csv \
-	${ROOT_COBRANZAS_PATH}/output-v3.csv
+	${ROOT_COBRANZAS_PATH}/input-v4.csv \
+	${ROOT_COBRANZAS_PATH}/output-v4.csv \
+	${ROOT_COBRANZAS_PATH}/input-v5.csv \
+	${ROOT_COBRANZAS_PATH}/output-v5.csv
