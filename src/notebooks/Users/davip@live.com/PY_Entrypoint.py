@@ -1,9 +1,9 @@
 # Databricks notebook source
-# MAGIC %run /Shared/Utils/Converter
+# MAGIC %run /Shared/Utils/Reader
 
 # COMMAND ----------
 
-# MAGIC %run /Shared/Utils/Reader
+# MAGIC %run /Shared/Utils/Converter
 
 # COMMAND ----------
 
@@ -11,22 +11,38 @@
 
 # COMMAND ----------
 
-def run(path_x_data, path_y_data, data_test):
+def run(path_x_train, path_y_train, path_x_test, path_y_test):
   # load the train data and transform it from dataframew to python collection
-  df_x_data = read_csv_from_file(path_x_data)
-  x_data_collection = dataframe_to_collection(df_x_data)
-  df_y_data = read_csv_from_file(path_y_data)
-  y_data_collection = dataframe_to_collection(df_y_data)
+  df_x_train = read_csv_from_file(path_x_train)
+  X_train = dataframe_to_collection(df_x_train)
+  
+  df_y_train = read_csv_from_file(path_y_train)
+  y_train = dataframe_to_collection(df_y_train)
+  
+  df_x_test = read_csv_from_file(path_x_test)
+  X_test = dataframe_to_collection(df_x_test)
+  
+  df_y_test = read_csv_from_file(path_y_test)
+  y_test = dataframe_to_collection(df_y_test)
   
   # train model
-  train_model(x_data_collection, y_data_collection)
-  return predictor(data_test)
+  train_model(X_train, y_train)
+  # get predictions
+  predictions = predictor(X_test)
+  # log coefficients
+  log_coefs()
+  # log metrics
+  log_metrics(y_test, predictions)
+  # log model
+  log_model()
 
 # COMMAND ----------
 
-PATH_X_DATA = '/data/training/input-v0.csv'
-PATH_Y_DATA = '/data/training/output-v0.csv'
-test = [[419, 773, 185]]
+PATH_X_TRAIN = '/data/training/input-v0.csv'
+PATH_Y_TRAIN = '/data/training/output-v0.csv'
+PATH_X_TEST = '/data/training/input-v1.csv'
+PATH_Y_TEST = '/data/training/output-v1.csv'
 
-outcome = run(x_data_collection, y_data_collectiontest)
-print(outcome)
+#coef, mae, mse, rmse = run(PATH_X_TRAIN, PATH_Y_TRAIN, PATH_X_TEST, PATH_Y_TEST)
+run(PATH_X_TRAIN, PATH_Y_TRAIN, PATH_X_TEST, PATH_Y_TEST)
+#print(coef, mae, mse, rmse)
