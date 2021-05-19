@@ -43,3 +43,7 @@ run-on-databricks:
 	@ mlflow run . --backend databricks --backend-config ./infra/databricks/cluster.json --experiment-id 47629144257743
 run-on-kubernetes:
 	@ mlflow run . --backend kubernetes --backend-config ./infra/databricks/cluster.json
+
+
+replace:
+	@ ./scripts/replace/databricks_to_python.sh
