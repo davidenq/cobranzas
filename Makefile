@@ -14,10 +14,12 @@ connect-with-databricks:
 	@ databricks configure --token-file ./token --host $(DATABRICKS_HOST)
 	@ cat ./token
 	@ rm -rf ./token
+
 update-file-dependencies:
 	@ databricks libraries list --cluster-name $(CLUSTER_NAME) | grep "package" |  sed -e "s/\"//g" | awk '{print "\n  - "$$2}' >> conda.yml
 	@ echo "$$(awk '!a[$$0]++' conda.yml)" > conda.yml
-
+	@ databricks libraries list --cluster-name $(CLUSTER_NAME) | grep "package" |  sed -e "s/\"//g" | awk '{print $$2}' >> requirements.txt
+	@ echo "$$(awk '!a[$$0]++' requirements.txt)" > requirements.txt
 
 ### commands for Conda
 create-env:
@@ -30,4 +32,14 @@ unit-test:
 	@ PROJECT_ENVIRONMENT=$(PROJECT_ENVIRONMENT) ./scripts/tests/unit-tests.sh
 
 copy-data-training:
-	dbfs cp -r ./data dbfs:/data
+	@ dbfs cp -r ./data dbfs:/data
+
+run-on-local:
+	@ mlflow run . --backend local
+
+
+run-on-databricks:
+	@ $(eval export MLFLOW_TRACKING_URI=databricks)
+	@ mlflow run . --backend databricks --backend-config ./infra/databricks/cluster.json --experiment-id 47629144257743
+run-on-kubernetes:
+	@ mlflow run . --backend kubernetes --backend-config ./infra/databricks/cluster.json
