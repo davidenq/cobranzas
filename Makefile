@@ -47,3 +47,11 @@ run-on-kubernetes:
 
 replace:
 	@ ./scripts/replace/databricks_to_python.sh
+
+run:
+	@ $(eval ROOT_COBRANZAS_PATH=$(shell pwd)/data/training)
+	@ python src/main.py \
+	${ROOT_COBRANZAS_PATH}/input-v2.csv \
+	${ROOT_COBRANZAS_PATH}/output-v2.csv \
+	${ROOT_COBRANZAS_PATH}/input-v3.csv \
+	${ROOT_COBRANZAS_PATH}/output-v3.csv
