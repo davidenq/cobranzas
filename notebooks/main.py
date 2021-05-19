@@ -38,6 +38,7 @@ def run(path_x_train, path_y_train, path_x_test, path_y_test):
 
 # COMMAND ----------
 
+# main function
 if __name__ == "__main__":
   PATH_X_TRAIN = '/data/training/input-v0.csv'
   PATH_Y_TRAIN = '/data/training/output-v0.csv'
