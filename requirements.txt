@@ -2,3 +2,4 @@ pyspark
 pytest
 coverage==5.5
 mlflow
+pandas
