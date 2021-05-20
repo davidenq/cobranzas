@@ -40,9 +40,9 @@ def run(path_x_train, path_y_train, path_x_test, path_y_test):
 
 # main function
 if __name__ == "__main__":
-  PATH_X_TRAIN = '/data/training/input-v0.csv'
-  PATH_Y_TRAIN = '/data/training/output-v0.csv'
-  PATH_X_TEST = '/data/training/input-v1.csv'
-  PATH_Y_TEST = '/data/training/output-v1.csv'
-  
-  run(PATH_X_TRAIN, PATH_Y_TRAIN, PATH_X_TEST, PATH_Y_TEST)
+  X_TRAIN_PATH = '/data/training/input-v0.csv'
+  Y_TRAIN_PATH = '/data/training/output-v0.csv'
+  X_TEST_PATH = '/data/training/input-v1.csv'
+  Y_TEST_PATH = '/data/training/output-v1.csv'
+
+  run(X_TRAIN_PATH, Y_TRAIN_PATH, X_TEST_PATH, Y_TEST_PATH)
