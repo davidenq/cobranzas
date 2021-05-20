@@ -51,6 +51,7 @@ run-on-kubernetes:
 
 refactor-notebooks-to-python:
 	@ ./scripts/replace/databricks_to_python.sh
+	@ echo now run 'make refactor-burned-paths-to-args'
 
 refactor-burned-paths-to-args:
 	@ ./scripts/replace/burned_paths_to_envs.sh
