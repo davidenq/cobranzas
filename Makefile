@@ -49,12 +49,10 @@ run-on-kubernetes:
 	@ mlflow run . --backend kubernetes --backend-config ./infra/databricks/cluster.json
 
 
-replace:
+refactor-notebooks-to-python:
 	@ ./scripts/replace/databricks_to_python.sh
 
-#replace burned paths (rbp) in main.py
-
-replace-bp:
+refactor-burned-paths-to-args:
 	@ ./scripts/replace/burned_paths_to_envs.sh
 
 run:
