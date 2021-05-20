@@ -37,10 +37,14 @@ copy-data-training:
 run-on-local:
 	@ mlflow run . --backend local
 
-
 run-on-databricks:
-	@ $(eval export MLFLOW_TRACKING_URI=databricks)
-	@ mlflow run . --backend databricks --backend-config ./infra/databricks/cluster.json --experiment-id 47629144257743
+	@ $(eval export MLFLOW_TRACKING_URI=databricks) 
+	@ mlflow run . --backend databricks --backend-config ./infra/databricks/cluster.json --experiment-id 47629144257743 \
+	-P path_x_train=/data/input-v0.csv \
+	-P path_y_train=/data/output-v0.csv \
+	-P path_x_test=/data/input-v1.csv \
+	-P path_y_test=/data/output-v1.csv
+
 run-on-kubernetes:
 	@ mlflow run . --backend kubernetes --backend-config ./infra/databricks/cluster.json
 
