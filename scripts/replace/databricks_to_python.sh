@@ -23,7 +23,6 @@ while IFS=  read -r -d $'\0'; do
             )
 
             FROM=$(echo $path | sed "s/@//g" | sed "s/\.//g" | sed "s/\//./g")
-            echo $path
             IMPORTS=$(echo $(echo from ${FROM:1} import ${DEF_LIST:: -1}) | sed 's/\n//g')
             
             sed -i "1s/^/${IMPORTS}\n/" $NEW_PATH
@@ -31,18 +30,26 @@ while IFS=  read -r -d $'\0'; do
 
 
         sed -i "1s/^/\
-########################################################\n\
-# IMPORTANT!                                           #\n\
-# THIS CODE IS CREATED AUTOMATICALLY FROM NOTEBOOKS    #\n\
-# If you add some code\, it will be delete in the next  #\n\
-# push\/pull executions                                #\n\
-# If you want to persist the information\, work on the #\n\
-# corresponding notebook and push those changes        #\n\
-# THIS CODE NOT DEPEND ON NOTEBOOK PRINCIPLES OR       #\n\
-# MAGIC RULES TO IMPORT NOTEBOOKS\, INSTEAD, MAGIC     #\n\
-# COMMANDS ARE REPLACE BY THE NATURALLY IMPORT PYTHON  #\n\
-# LIBRARIES                                            #\n\
-########################################################\n\
+ ############################################################\n\
+#                        IMPORTANT!                          #\n\
+#     THIS CODE IS CREATED AUTOMATICALLY FROM NOTEBOOKS      #\n\
+#                                                            #\n\
+# You can modify any line of code to make some tests, even   #\n\
+# you can push the changes to the repository but, it will    #\n\
+# not persist since in the next push or pull execution,      #\n\
+# automatically will be generated all the code having in     #\n\
+# mind the original notebook code. This is because the work  #\n\
+# made by Data Scientst will not be modify in any way.       #\n\
+#                                                            #\n\
+# If you want to persist the information, you should work    #\n\
+# on thecorresponding notebook and push those changes from   #\n\
+# the notebook.                                              #\n\
+#                                                            #\n\
+# This generated code not depend on notebooks principles in  #\n\
+# any way (for instance,  magic rules to import notebooks).  #\n\
+# Instead, magic command are replaces by the natural python  #\n\
+# imports.                                                   #\n\
+ ############################################################\n\
 \n/" $NEW_PATH
 
     fi
