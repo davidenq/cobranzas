@@ -1,0 +1,67 @@
+<mxfile>
+    <diagram id="-yn50Gycehup-wXLylS0" name="Page-1">
+        <mxGraphModel dx="1423" dy="1011" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="120" width="160" height="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Extract" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="210" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Parse&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22Extract%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22170%22%20y%3D%22150%22%20width%3D%22120%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="260" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Clean" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="310" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="420" width="100" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="For training" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="165" y="453" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="For testing" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="165" y="521" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Importing Dependencies" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="140" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Declarations of Constants" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="60" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Import / Load Data" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Save in Spark Table" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="360" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;h1&gt;Data Preparation&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;direction=east;rotation=270;" parent="1" vertex="1">
+                    <mxGeometry y="350" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;h1&gt;splitting&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;direction=east;rotation=270;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="495" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="630" width="160" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="&lt;h1&gt;Model Definition&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;direction=east;rotation=270;" vertex="1" parent="1">
+                    <mxGeometry y="755" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="Train" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="660" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="registry metrics" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="780" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="registry models" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="840" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="Predict" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="720" width="120" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
