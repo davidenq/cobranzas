@@ -35,7 +35,13 @@ copy-data-training:
 	@ dbfs cp -r ./data dbfs:/data
 
 run-on-local:
-	@ mlflow run . --backend local
+	@ $(eval export MLFLOW_TRACKING_URI=$(AZURE_WASB_LINK))
+	@ mlflow run . --backend local  \
+	-P path_x_train=./data/training/input-v0.csv \
+	-P path_y_train=./data/training/output-v0.csv \
+	-P path_x_test=./data/training/input-v1.csv \
+	-P path_y_test=./data/training/output-v1.csv \
+	--no-conda
 
 run-on-databricks:
 	@ $(eval export MLFLOW_TRACKING_URI=databricks) 
