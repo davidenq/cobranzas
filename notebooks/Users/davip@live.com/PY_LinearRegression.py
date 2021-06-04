@@ -10,6 +10,11 @@ linearReg = LinearRegression(n_jobs=1)
 
 # COMMAND ----------
 
+def model():
+  return linearReg
+
+# COMMAND ----------
+
 def train_model(X_train, y_train):
   linearReg.fit(X=X_train, y=y_train)
 
@@ -21,6 +26,7 @@ def predictor(X_test):
 
 # COMMAND ----------
 
+# log coefs
 def log_coefs():
   coef = linearReg.coef_[0]
   mlflow.log_metric("a", coef[0])
@@ -43,10 +49,3 @@ def log_metrics(y_test, predictions):
   mlflow.log_metric("RMSE", rmse)
     
   return mae, mse, rmse
-
-# COMMAND ----------
-
-def log_model():
-  mlflow.sklearn.log_model(linearReg, "linearReg")
-  print("Model saved in run %s" % mlflow.active_run().info.run_uuid)
-  
