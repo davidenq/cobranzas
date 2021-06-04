@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - src/**
+      - notebooks/**
 jobs:
   prepare:
     runs-on: ubuntu-latest
