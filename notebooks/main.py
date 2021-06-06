@@ -1,4 +1,9 @@
 # Databricks notebook source
+import mlflow
+import mlflow.sklearn
+
+# COMMAND ----------
+
 # MAGIC %run /Shared/Utils/Reader
 
 # COMMAND ----------
