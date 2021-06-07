@@ -4,4 +4,9 @@ pip_env: conda.yml
 
 entry_points:
   main:
-    command: "python src/Models/PY_Diabetes.py"
+    parameters:
+      path_x_train: string
+      path_y_train: string
+      path_x_test: string
+      path_y_test: string
+    command: "python src/main.py {path_x_train} {path_y_train} {path_x_test} {path_y_test}"

@@ -8,9 +8,9 @@ dependencies:
   - pyspark
   - pytest
   - mlflow
-  - pandas
-  - numpy
   - scikit-learn
   - mysql-connector-python
   - mysqlclient
   - azure-storage-blob
+  - pandas
+  - numpy

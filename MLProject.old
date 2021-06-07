@@ -1,0 +1,7 @@
+name: mlflow-cobranzas
+
+pip_env: conda.yml
+
+entry_points:
+  main:
+    command: "python src/Models/PY_Diabetes.py"
