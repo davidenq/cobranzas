@@ -41,7 +41,6 @@ run-on-local:
 	-P path_y_train=./data/training/output-v0.csv \
 	-P path_x_test=./data/training/input-v1.csv \
 	-P path_y_test=./data/training/output-v1.csv \
-	--experiment-id 0 \
 	--no-conda
 
 run-on-databricks:
@@ -71,3 +70,31 @@ run:
 	${ROOT_COBRANZAS_PATH}/output-v4.csv \
 	${ROOT_COBRANZAS_PATH}/input-v5.csv \
 	${ROOT_COBRANZAS_PATH}/output-v5.csv
+
+
+run-mlflow-server:
+
+	@ $(eval export AZURE_STORAGE_CONNECTION_STRING=$(AZURE_STORAGE_CONNECTION_STRING))
+	@ $(eval export AZURE_STORAGE_ACCESS_KEY=$(AZURE_STORAGE_ACCESS_KEY))
+	mlflow server \
+    # --backend-store-uri mysql://user:password@127.0.0.1:3306/mlflow-backend-store \
+    --default-artifact-root wasbs://mlflow-storage@mlflowcobranzas.blob.core.windows.net/artifacts \
+    --host 0.0.0.0
+
+run-local:
+	@ $(eval export MLFLOW_TRACKING_URI=$(MLFLOW_TRACKING_URI))
+	@ $(eval export AZURE_STORAGE_CONNECTION_STRING=$(AZURE_STORAGE_CONNECTION_STRING))
+	@ $(eval export AZURE_STORAGE_ACCESS_KEY=$(AZURE_STORAGE_ACCESS_KEY))
+	@ echo $$MLFLOW_TRACKING_URI
+	@ mlflow run . --no-conda
+
+get-last-model:
+	@ $(eval export AZURE_WASB_LINK=$(AZURE_WASB_LINK))
+	@ $(eval export MODEL_NAME=$(MODEL_NAME))
+	@ $(eval export MLFLOW_TRACKING_URI=$(MLFLOW_TRACKING_URI))
+	@ $(eval export AZURE_STORAGE_CONNECTION_STRING=$(AZURE_STORAGE_CONNECTION_STRING))
+	@ $(eval export AZURE_STORAGE_ACCESS_KEY=$(AZURE_STORAGE_ACCESS_KEY))
+	./scripts/mlflow/get-latest-model.sh
+
+
+
