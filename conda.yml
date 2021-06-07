@@ -5,10 +5,12 @@ channels:
   - conda-forge
 dependencies:
   - python=3.9
-  - pip
   - pyspark
   - pytest
   - mlflow
   - pandas
   - numpy
   - scikit-learn
+  - mysql-connector-python
+  - mysqlclient
+  - azure-storage-blob
