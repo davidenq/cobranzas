@@ -1,6 +1,6 @@
 <mxfile>
     <diagram id="62ZwhjvqDhIHXK7hj6mZ" name="Page-1">
-        <mxGraphModel dx="1639" dy="624" grid="0" gridSize="10" guides="0" tooltips="0" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
+        <mxGraphModel dx="1930" dy="957" grid="0" gridSize="10" guides="0" tooltips="0" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="544" value="Microsoft Azure Layer" style="locked=1;" parent="0"/>
@@ -108,15 +108,18 @@
                 <mxCell id="957" value="&lt;h4&gt;Data Lake Production&lt;/h4&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;" parent="948" vertex="1">
                     <mxGeometry x="24.110000000000014" y="132.48000000000002" width="70" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="580" value="Databricks Sandbox Layer" style="" parent="0"/>
+                <mxCell id="580" value="Databricks Sandbox Layer" style="locked=1;" parent="0"/>
                 <mxCell id="582" value="" style="whiteSpace=wrap;html=1;shadow=0;dashed=1;arcSize=4;strokeColor=#82b366;fillColor=none;rounded=1;" parent="580" vertex="1">
-                    <mxGeometry x="-530" y="150" width="280" height="138" as="geometry"/>
+                    <mxGeometry x="-530" y="150.0025" width="280" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="583" value="&lt;font style=&quot;font-size: 8px&quot;&gt;Sandbox for developing experiments / training?&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#808080;rounded=1;" parent="580" vertex="1">
+                    <mxGeometry x="-465" y="415.5" width="170" height="10" as="geometry"/>
                 </mxCell>
                 <mxCell id="586" value="&lt;h4&gt;Azure Databricks&amp;nbsp;&lt;/h4&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;" parent="580" vertex="1">
                     <mxGeometry x="-510" y="120.69" width="70" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="922" value="" style="whiteSpace=wrap;html=1;shadow=1;dashed=1;fillColor=#FFFFFF;arcSize=4;strokeColor=#666666;rounded=1;" parent="580" vertex="1">
-                    <mxGeometry x="-496" y="192" width="211" height="82" as="geometry"/>
+                    <mxGeometry x="-496" y="192" width="211" height="212" as="geometry"/>
                 </mxCell>
                 <mxCell id="923" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Databricks.svg;rounded=1;" parent="580" vertex="1">
                     <mxGeometry x="-417" y="217" width="50" height="48" as="geometry"/>
@@ -134,19 +137,16 @@
                     <mxGeometry width="35" height="39.01" as="geometry"/>
                 </mxCell>
                 <mxCell id="1053" value="" style="whiteSpace=wrap;html=1;shadow=1;dashed=1;fillColor=#FFFFFF;arcSize=4;strokeColor=#666666;rounded=1;" parent="580" vertex="1">
-                    <mxGeometry x="-482" y="307" width="79" height="71" as="geometry"/>
+                    <mxGeometry x="-482" y="303" width="79" height="71" as="geometry"/>
                 </mxCell>
                 <mxCell id="1054" value="" style="whiteSpace=wrap;html=1;shadow=1;dashed=1;fillColor=#FFFFFF;arcSize=4;strokeColor=#666666;rounded=1;" parent="580" vertex="1">
-                    <mxGeometry x="-382" y="308" width="79" height="71" as="geometry"/>
+                    <mxGeometry x="-382" y="304" width="79" height="71" as="geometry"/>
                 </mxCell>
                 <mxCell id="1055" value="&lt;h4&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;MLFlow tracking server&lt;/span&gt;&lt;/h4&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;" parent="580" vertex="1">
-                    <mxGeometry x="-475" y="331" width="65" height="43" as="geometry"/>
+                    <mxGeometry x="-475" y="317" width="65" height="43" as="geometry"/>
                 </mxCell>
                 <mxCell id="1056" value="&lt;h4&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;MLFlow registry&lt;/span&gt;&lt;/h4&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;" parent="580" vertex="1">
-                    <mxGeometry x="-375" y="345" width="65" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="1071" value="&lt;font style=&quot;font-size: 8px&quot;&gt;Sandbox for developing experiments / training?&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#808080;rounded=1;" vertex="1" parent="580">
-                    <mxGeometry x="-460" y="199" width="170" height="10" as="geometry"/>
+                    <mxGeometry x="-375" y="324.5" width="65" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1" value="Connections  and Legends" style="locked=1;" parent="0"/>
                 <mxCell id="935" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;strokeColor=#4D4D4D;fontSize=8;" parent="1" edge="1">
@@ -168,7 +168,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="958" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;strokeColor=#4D4D4D;fontSize=8;entryX=0.02;entryY=0.479;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="923" edge="1">
+                <mxCell id="958" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;strokeColor=#4D4D4D;fontSize=8;entryX=0.02;entryY=0.479;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1" target="923">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-580.0000000000002" y="302.59999999999997" as="sourcePoint"/>
                         <mxPoint x="-445" y="302.59999999999997" as="targetPoint"/>
@@ -209,7 +209,7 @@
                         <mxPoint x="-40" y="370" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="997" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;strokeColor=#4D4D4D;fontSize=8;exitX=1;exitY=0.479;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="923" edge="1">
+                <mxCell id="997" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;strokeColor=#4D4D4D;fontSize=8;exitX=1;exitY=0.479;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1" source="923">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-315" y="302.57142857142867" as="sourcePoint"/>
                         <mxPoint x="-147.5" y="323.75" as="targetPoint"/>
@@ -243,7 +243,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="1058" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1">
+                <mxCell id="1058" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="-342" y="375" as="sourcePoint"/>
                         <mxPoint x="123.75" y="361.94000000000005" as="targetPoint"/>
@@ -254,7 +254,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="1059" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="1054" target="767" edge="1">
+                <mxCell id="1059" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="1054" target="767">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="-342" y="391" as="sourcePoint"/>
                         <mxPoint x="133.75" y="371.94000000000005" as="targetPoint"/>
@@ -264,13 +264,13 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="1061" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;exitX=0.512;exitY=1.001;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="923" target="1053" edge="1">
+                <mxCell id="1061" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;exitX=0.512;exitY=1.001;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="923" target="1053">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="-407" y="260" as="sourcePoint"/>
                         <mxPoint x="-457" y="310" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="1062" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;" parent="1" target="1054" edge="1">
+                <mxCell id="1062" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;" edge="1" parent="1" target="1054">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="-391" y="265" as="sourcePoint"/>
                         <mxPoint x="-432.48275862068954" y="313" as="targetPoint"/>
@@ -578,25 +578,6 @@
                 </mxCell>
                 <mxCell id="1046" value="&lt;h4&gt;Azure PowerBI&amp;nbsp;&lt;/h4&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;" parent="1040" vertex="1">
                     <mxGeometry x="-503" y="437" width="70" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="1063" value="MLFlow Server" style="locked=1;" parent="0"/>
-                <mxCell id="1069" value="" style="group" vertex="1" connectable="0" parent="1063">
-                    <mxGeometry x="-51" y="1009" width="211" height="212" as="geometry"/>
-                </mxCell>
-                <mxCell id="1064" value="" style="whiteSpace=wrap;html=1;shadow=1;dashed=1;fillColor=#FFFFFF;arcSize=4;strokeColor=#666666;rounded=1;" vertex="1" parent="1069">
-                    <mxGeometry width="211" height="212" as="geometry"/>
-                </mxCell>
-                <mxCell id="1065" value="" style="whiteSpace=wrap;html=1;shadow=1;dashed=1;fillColor=#FFFFFF;arcSize=4;strokeColor=#666666;rounded=1;" vertex="1" parent="1069">
-                    <mxGeometry x="14" y="111" width="79" height="71" as="geometry"/>
-                </mxCell>
-                <mxCell id="1066" value="" style="whiteSpace=wrap;html=1;shadow=1;dashed=1;fillColor=#FFFFFF;arcSize=4;strokeColor=#666666;rounded=1;" vertex="1" parent="1069">
-                    <mxGeometry x="114" y="112" width="79" height="71" as="geometry"/>
-                </mxCell>
-                <mxCell id="1067" value="&lt;h4&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;MLFlow tracking server&lt;/span&gt;&lt;/h4&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;" vertex="1" parent="1069">
-                    <mxGeometry x="21" y="125" width="65" height="43" as="geometry"/>
-                </mxCell>
-                <mxCell id="1068" value="&lt;h4&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;MLFlow registry&lt;/span&gt;&lt;/h4&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;" vertex="1" parent="1069">
-                    <mxGeometry x="121" y="132.5" width="65" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
